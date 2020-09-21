@@ -16,32 +16,22 @@ public class Main {
         try {
 
             File startingFolder = new File("testData");
-            System.out.println("Starting Path: " + startingFolder.getCanonicalPath());
-            searchDirectory(input, startingFolder);
+            System.out.println("Starting Path: ");
+            System.out.println(startingFolder.getCanonicalPath());
+            System.out.println();
+            System.out.println("Search result for " + input );
+            printMatchingFile(input, startingFolder);
 
-            //System.out.println("Contains: " + Arrays.toString(startingFolder.list()));
-            //System.out.println("-------");
-            //System.out.println();
 
-            //printInfo(startingFolder);
         } catch (Exception e) {
             System.out.println("Oops");
         }
     }
 
-    public static void searchDirectory(String searchTerm, File file) {
+    public static void printMatchingFile(String searchTerm, File file) {
 
         if (file.isFile()) {
             try {
-                /*
-                Scanner scanner = new Scanner(file.getAbsoluteFile());
-                while (scanner.hasNextLine()) {
-                    if (scanner.next().equals(searchTerm)) {
-                        System.out.println(file.getAbsolutePath());
-                        break;
-                    }
-                }
-                */
 
                 Scanner scanner = new Scanner(file);
                 while (scanner.hasNext()) {
@@ -50,36 +40,18 @@ public class Main {
                         break;
                     }
                 }
-            } catch (FileNotFoundException e) {
+            } catch (Exception e) {
+                System.out.println("Could not access " + file.getAbsolutePath());
                 e.printStackTrace();
             }
         } else if (file.isDirectory()) {
             File[] paths = file.listFiles();
             for (File subFile: paths) {
-                searchDirectory(searchTerm, subFile);
+                printMatchingFile(searchTerm, subFile);
             }
         }
     }
 
-    public static void printInfo(File file) {
-        // Om det är en vanlig fil: Skriv ut namnet på filen
-        // Om det är en mapp: Skriv ut sökvägen på mappen, och gå in i mappen
 
-        if (file.isFile()) {
-            System.out.println("Fil: " + file.getName());
-        } else if (file.isDirectory()) {
-            try {
-                System.out.println("Mapp: " + file.getCanonicalPath());
-
-                File[] folderContents = file.listFiles();
-                for (int i = 0; i < folderContents.length; i++) {
-                    File f = folderContents[i];
-                    printInfo(f);
-                }
-
-            } catch (Exception e) {
-                System.out.println("Oops");
             }
-        }
-    }
-}
+
