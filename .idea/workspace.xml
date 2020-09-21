@@ -20,15 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="925ac9fd-eaaa-497f-b4e6-9209f343f91c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/testData/Drycker/KoffeinDrycker/ColaZero.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testData/Drycker/KoffeinDrycker/Kaffe.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testData/Drycker/Vatten.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testData/Gnu.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testData/Makaroner.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testData/Ost.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testFile.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,16 +52,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.company.Main" />
-      <module name="Filecrawler" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -78,6 +59,16 @@
         </value>
       </option>
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.Main" />
+      <module name="Filecrawler" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
