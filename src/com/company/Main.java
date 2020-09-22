@@ -12,26 +12,25 @@ public class Main {
         String input = scanner.nextLine();
 
         try {
-
             File startingFolder = new File("testData");
             System.out.println("Starting Path: ");
             System.out.println(startingFolder.getCanonicalPath());
             System.out.println();
-            System.out.println("Search result for " + input );
-            printMatchingFile(input, startingFolder);
-
-
+            System.out.println("Search result for: " + input);
+            printMatchingFiles(input, startingFolder);
         } catch (Exception e) {
             System.out.println("Oops");
+        } finally {
+            scanner.close();
         }
     }
 
-    public static void printMatchingFile(String searchTerm, File file) {
+    public static void printMatchingFiles(String searchTerm, File file) {
 
         if (file.isFile()) {
+            Scanner scanner = null;
             try {
-
-                Scanner scanner = new Scanner(file);
+                scanner = new Scanner(file);
                 while (scanner.hasNext()) {
                     if (scanner.next().equals(searchTerm)) {
                         System.out.println(file.getAbsolutePath());
@@ -41,11 +40,14 @@ public class Main {
             } catch (Exception e) {
                 System.out.println("Could not access " + file.getAbsolutePath());
                 e.printStackTrace();
+            } finally {
+                // Scanner will always be closed
+                scanner.close();
             }
         } else if (file.isDirectory()) {
             File[] paths = file.listFiles();
             for (File subFile: paths) {
-                printMatchingFile(searchTerm, subFile);
+                printMatchingFiles(searchTerm, subFile);
             }
         }
     }
